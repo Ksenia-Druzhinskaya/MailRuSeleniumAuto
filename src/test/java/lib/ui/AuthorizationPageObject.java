@@ -20,10 +20,10 @@ public class AuthorizationPageObject extends MainPageObject
 
         this.switchToLoginFrame();
 
-        this.waitForElementAndSendKeys(EMAIL_INPUT, login, "Cannot find and put a login to the login input");
+        this.waitForElementAndSendKeys(EMAIL_INPUT, login, "Cannot find and put a value to the Login input");
         this.waitForElementClickAndWaitForNotPresent(PASSWORD_BUTTON, "Cannot find Password button");
-        this.waitForElementAndSendKeys(PASSWORD_INPUT, password, "Cannot find and put a password to the password input");
-        this.waitForElementAndClick(SUBMIT_BUTTON, "Cannot find and click submit auth button.");
+        this.waitForElementAndSendKeys(PASSWORD_INPUT, password, "Cannot find and put a value to the Password input");
+        this.waitForElementAndClick(SUBMIT_BUTTON, "Cannot find and click Submit Login button.");
 
         this.switchOffLoginFrame();
     }
