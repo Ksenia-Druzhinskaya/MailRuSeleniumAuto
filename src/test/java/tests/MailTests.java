@@ -21,7 +21,7 @@ public class MailTests extends CoreTestCase
             // Create and send email
             InboxPageObject inboxPageObject = new InboxPageObject(driver);
             inboxPageObject.clickComposeButton();
-            inboxPageObject.fillEmail(email);
+            inboxPageObject.fillEmailFields(email);
             inboxPageObject.sendEmailAndVerify();
     }
 }

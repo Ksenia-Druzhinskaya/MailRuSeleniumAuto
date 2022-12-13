@@ -31,7 +31,7 @@ public class InboxPageObject extends MainPageObject
         this.waitForElementAndClick(COMPOSE_BUTTON, "Cannot find Compose button");
     }
 
-    public void fillEmail(EmailMessage email){
+    public void fillEmailFields(EmailMessage email){
         this.waitForElementAndSendKeys(TO_INPUT, email.getTo(), "Cannot find To input");
         this.waitForElementAndSendKeys(SUBJECT_INPUT, email.getSubject(), "Cannot find Subject input");
         this.waitForElementAndSetValue(BODY_INPUT, email.getHtmlBody(), "Cannot find and put a login to the login input");

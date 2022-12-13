@@ -18,15 +18,14 @@ public class AuthorizationPageObject extends MainPageObject
 
     public void enterLoginDataAndSubmit(String login, String password){
 
-        WebElement loginFrame = this.waitForElementPresent(LOGIN_FRAME, "Login frame is not displayed");
-        driver.switchTo().frame(loginFrame);
+        this.switchToLoginFrame();
 
         this.waitForElementAndSendKeys(EMAIL_INPUT, login, "Cannot find and put a login to the login input");
         this.waitForElementClickAndWaitForNotPresent(PASSWORD_BUTTON, "Cannot find Password button");
         this.waitForElementAndSendKeys(PASSWORD_INPUT, password, "Cannot find and put a password to the password input");
         this.waitForElementAndClick(SUBMIT_BUTTON, "Cannot find and click submit auth button.");
 
-        driver.switchTo().defaultContent();
+        this.switchOffLoginFrame();
     }
 
     public void clickLoginButton(){
@@ -34,7 +33,16 @@ public class AuthorizationPageObject extends MainPageObject
     }
 
     public void logIn(String login, String password){
-        clickLoginButton();
-        enterLoginDataAndSubmit(login, password);
+        this.clickLoginButton();
+        this.enterLoginDataAndSubmit(login, password);
+    }
+
+    private void switchToLoginFrame(){
+        WebElement loginFrame = this.waitForElementPresent(LOGIN_FRAME, "Login frame is not displayed");
+        driver.switchTo().frame(loginFrame);
+    }
+
+    private void switchOffLoginFrame(){
+        driver.switchTo().defaultContent();
     }
 }
