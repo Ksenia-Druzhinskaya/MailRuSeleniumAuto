@@ -1,7 +1,7 @@
 package lib.ui;
 
 import lib.entities.EmailMessage;
-import org.openqa.selenium.remote.RemoteWebDriver;
+import org.openqa.selenium.WebDriver;
 
 import static lib.TestData.EMAIL_SENT_TEXT;
 
@@ -19,7 +19,7 @@ public class InboxPageObject extends MainPageObject
         return EMAIL_SENT_LABEL.replace("{TEXT}", EMAIL_SENT_TEXT);
     }
 
-    public InboxPageObject(RemoteWebDriver driver){super(driver);
+    public InboxPageObject(WebDriver driver){super(driver);
     }
 
     public void sendEmailAndVerify(){

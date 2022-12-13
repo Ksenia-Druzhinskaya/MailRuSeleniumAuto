@@ -1,9 +1,6 @@
 package lib.ui;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.NoSuchElementException;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.remote.RemoteWebDriver;
+import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
@@ -15,9 +12,9 @@ import static org.openqa.selenium.support.ui.ExpectedConditions.presenceOfElemen
 
 abstract public class MainPageObject
 {
-    protected RemoteWebDriver driver;
+    protected WebDriver driver;
 
-    public MainPageObject(RemoteWebDriver driver){
+    public MainPageObject(WebDriver driver){
         this.driver = driver;
     }
 
@@ -48,7 +45,8 @@ abstract public class MainPageObject
 
     public WebElement waitForElementAndSetValue(String locator, String value, String errorMessage){
         WebElement element = waitForElementPresent(locator, errorMessage);
-        driver.executeScript("arguments[0].innerHTML = '" + value + "'", element);
+        JavascriptExecutor jsDriver = (JavascriptExecutor)driver;
+        jsDriver.executeScript("arguments[0].innerHTML = '" + value + "'", element);
         return element;
     }
 

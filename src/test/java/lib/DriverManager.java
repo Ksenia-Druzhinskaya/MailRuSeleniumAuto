@@ -1,15 +1,15 @@
 package lib;
 
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.remote.RemoteWebDriver;
 
 import static lib.TestData.CHROME;
 import static lib.TestData.FIREFOX;
 
 public class DriverManager
 {
-    public static RemoteWebDriver getDriver() throws Exception{
+    public static WebDriver getDriver() throws Exception{
         String currentBrowser = getBrowserVar();
         switch (currentBrowser){
             case CHROME :

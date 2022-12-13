@@ -1,7 +1,7 @@
 package lib.ui;
 
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.remote.RemoteWebDriver;
 
 public class AuthorizationPageObject extends MainPageObject
 {
@@ -13,7 +13,7 @@ public class AuthorizationPageObject extends MainPageObject
                 PASSWORD_INPUT = "xpath://input[@name='password']",
                 SUBMIT_BUTTON = "xpath://button[@data-test-id='submit-button']";
 
-    public AuthorizationPageObject(RemoteWebDriver driver){super(driver);
+    public AuthorizationPageObject(WebDriver driver){super(driver);
     }
 
     public void enterLoginDataAndSubmit(String login, String password){
