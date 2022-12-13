@@ -29,7 +29,7 @@ public class AuthorizationPageObject extends MainPageObject
     }
 
     public void clickLoginButton(){
-        this.waitForElementAndClick(LOGIN_BUTTON, "Cannot find Login button");;
+        this.waitForElementAndClick(LOGIN_BUTTON, "Cannot find Login button");
     }
 
     public void logIn(String login, String password){
