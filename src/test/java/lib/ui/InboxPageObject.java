@@ -32,8 +32,8 @@ public class InboxPageObject extends MainPageObject
     }
 
     public void fillEmailFields(EmailMessage email){
-        this.waitForElementAndSendKeys(TO_INPUT, email.getTo(), "Cannot find and put value to the To input");
-        this.waitForElementAndSendKeys(SUBJECT_INPUT, email.getSubject(), "Cannot find and put value to the Subject input");
-        this.waitForElementAndSetValue(BODY_INPUT, email.getHtmlBody(), "Cannot find and put value to the Body input");
+        this.waitForElementAndSendKeys(TO_INPUT, email.getTo(), "Cannot find and put a value to the To input");
+        this.waitForElementAndSendKeys(SUBJECT_INPUT, email.getSubject(), "Cannot find and put a value to the Subject input");
+        this.waitForElementAndSetValue(BODY_INPUT, email.getHtmlBody(), "Cannot find and put a value to the Body input");
     }
 }
